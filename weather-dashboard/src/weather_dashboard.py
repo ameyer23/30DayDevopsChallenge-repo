@@ -55,31 +55,28 @@ class WeatherDashboard:
             return None  # Return None if the request fails
 
     def save_to_s3(self, weather_data, city):
-        """Save the weather data as a JSON file in an S3 bucket"""
-        if not weather_data:  # Check if the weather data is empty or None
-            return False  # Return False if no weather data is provided
-            
-        # Generate a timestamp for unique file naming
-        timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')  # Current timestamp in YYYYMMDD-HHMMSS format
-        file_name = f"weather-data/{city}-{timestamp}.json"  # Create a unique file name based on the city and timestamp
+        """Save weather data to S3 bucket"""
+        if not weather_data:  # Check if weather_data is None or empty
+            return False  # Return False to indicate failure
+        
+        timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
+        file_name = f"weather-data/{city}-{timestamp}.json"
         
         try:
-            # Add the timestamp to the weather data
             weather_data['timestamp'] = timestamp
-            # Upload the weather data to the S3 bucket using the put_object method
             self.s3_client.put_object(
-                Bucket=self.bucket_name,  # The name of the S3 bucket to store the data in
-                Key=file_name,  # The file name within the bucket
-                Body=json.dumps(weather_data),  # Convert the weather data to a JSON string for storage
-                ContentType='application/json'  # Specify the content type as JSON
+                Bucket=self.bucket_name,
+                Key=file_name,
+                Body=json.dumps(weather_data),
+                ContentType='application/json'
             )
-            print(f"Successfully saved data for {city} to S3")  # Print success message
-            return True  # Return True indicating successful save
+            print(f"Successfully saved data for {city} to S3")
+            return True
         except Exception as e:
-            # Catch any exception during the S3 upload and print an error message
             print(f"Error saving to S3: {e}")
-            return False  # Return False if an error occurs during the save
-
+            return False
+    
+    
 def main():
     # Create an instance of the WeatherDashboard class
     dashboard = WeatherDashboard()
