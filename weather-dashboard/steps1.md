@@ -11,11 +11,11 @@ Day 1: Building a weather data collection system using AWS S3 and OpenWeather AP
 8. echo "__pycache__/" >> .gitignore
 9. echo "*.zip" >> .gitignore
 10. echo "python-dotenv==1.0.0" >> requirements.txt
-11. echo "bboto3==1.26.137" >> requirements.txt
+11. echo "boto3==1.26.137" >> requirements.txt
 12. echo "requests==2.28.2" >> requirements.txt
 13. run `aws configure`
 14. create file that stores api key: `echo "OPENWEATHER_API_KEY=your_api_key" >> .env`
-15. create bucket stores api data: `echo "AWA_BUCKET_NAME=weather-dashboard-${RANDOM}" >> .env
+15. create bucket stores api data: `echo "AWSclear_BUCKET_NAME=weather-dashboard-${RANDOM}" >> .env
 16. add code to GetYouAJob/weather-dashboard/src/weather_dashboard.py
 17. create virtual env: `python3 -m venv .venv`
 18a. activate virtual env: `source .venv/bin/activate`
