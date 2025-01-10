@@ -1,6 +1,7 @@
 # Building a Weather Dashboard using AWS S3 and OpenWeather's API
 
-![Weather Dashboard Diagram](./diagram.png)
+
+![Weather Dashboard Diagram](./diagram2.png)
 
 I have officially joined the 30-Day DevOps challenge headed by the Cozy Cloud Crew! I'm joining a little later than planned but I'm excited to churn these challenges out and get to learning. 
 
@@ -36,7 +37,7 @@ The project is organized as follows:
    ```
    
 
-Note that `__init__.py` will mark the src directory as a package and will help ensure compatibility if older Python versions are being used. On the other hand, the `weather_dashboard.py` file will contain the Python code that will do all of the fetching of weather data from the API. 
+Note that `__init__.py` will mark the src directory as a package and will help ensure compatibility if older Python versions are being used. On the other hand, the `weather_dashboard.py` file will contain the Python script that will do all of the fetching of weather data from the API. 
 
 4. **Create `requirements.txt README.md .env` files**: `touch requirements.txt README.md .env`
 
@@ -60,10 +61,17 @@ NOte that this API key is generated once you create an account with [OpenWeather
 11. **Add python script to** `weather_dashboard.py`**file**: This code can be found in this repo. 
 12. **Create a virtual environment to run python script**: 
 `python3 -m venv .venv`
+
+* I initally had problems getting my virtual environment to work. I dealt with that issue by recreating the environment using the following command: 
+    ```
+   rm -rf .venv
+   ```
+ 
 13. **Activate virtual env**: `source .venv/bin/activate`
 14. **Install boto3 to virtual env**: `pip install boto3`
 15. **Install all dependencies**: `pip install -r requirements.txt`
 16. **Run python script**: `python3 "src/weather_dashboard.py"`
+
    
    
    
