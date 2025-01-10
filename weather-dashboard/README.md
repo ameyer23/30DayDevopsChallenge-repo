@@ -1,5 +1,7 @@
 # Building a Weather Dashboard using AWS S3 and OpenWeather's API
 
+![Weather Dashboard Diagram](30DayDevopsChallenge-repo/weather-dashboard/diagram.png)
+
 I have officially joined the 30-Day DevOps challenge headed by the Cozy Cloud Crew! I'm joining a little later than planned but I'm excited to churn these challenges out and get to learning. 
 
 If you are interested in joining, join the Discord sever [here](https://lnkd.in/gjBFNSwJ)!
