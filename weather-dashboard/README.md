@@ -1,7 +1,7 @@
 # Building a Weather Dashboard using AWS S3 and OpenWeather's API
 
 
-![Weather Dashboard Diagram](./diagram2.png)
+![Weather Dashboard Diagram](./diagram.png)
 
 I have officially joined the 30-Day DevOps challenge headed by the Cozy Cloud Crew! I'm joining a little later than planned but I'm excited to churn these challenges out and get to learning. 
 
@@ -75,7 +75,7 @@ NOte that this API key is generated once you create an account with [OpenWeather
 ![Script Output](./script-output.png)
 `
 Now, lets make sure the bucket we created is storing weather information correctly. For this, navigate to the console and inspect the objects within the bucket. You should have 3 objects, one with weather information for each of the cities specified in our script. 
-![Script Output](./objects2.png)
+![Script Output](./objects.png)
 
 
 Select an object and click Open. 
