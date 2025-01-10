@@ -1,30 +1,60 @@
-Day 1: Building a weather data collection system using AWS S3 and OpenWeather API
+# Building a Weather Dashboard using AWS S3 and OpenWeather's API
 
-## Steps
-1. mkdir weather-dashboard
-2. mkdir src tests data
-3. touch src/__init__.py src/weather_dashboard.py
-4. touch requirements.txt README.md .env
-5. git init
-6. git branch -M main
-7. `echo ".env" >> .gitignore` :.env stores environment vars so they aren't tracked
-8. echo "__pycache__/" >> .gitignore
-9. echo "*.zip" >> .gitignore
-10. echo "python-dotenv==1.0.0" >> requirements.txt
-11. echo "bboto3==1.26.137" >> requirements.txt
-12. echo "requests==2.28.2" >> requirements.txt
-13. run `aws configure`
-14. create file that stores api key: `echo "OPENWEATHER_API_KEY=your_api_key" >> .env`
-15. create bucket stores api data: `echo "AWA_BUCKET_NAME=weather-dashboard-${RANDOM}" >> .env
-16. add code to GetYouAJob/weather-dashboard/src/weather_dashboard.py
-17. create virtual env: `python3 -m venv .venv`
-18a. activate virtual env: `source .venv/bin/activate`
-18b. Recreate env:
-    `rm -rf .venv`
-`````python3 -m venv .venv`
-    `source .venv/bin/activate`
-19. install boto3 to virtual env: `pip install boto3`
-19. `pip install -r requirements.txt`
-20. Run python code: `python3 "src/weather_dashboard.py"`
+I have officially joined the 30-Day DevOps challenge headed by the Cozy Cloud Crew! I'm joining a little later than planned but I'm excited to churn these challenges out and get to learning. 
+
+If you are interested in joining, join the Discord sever [here](https://lnkd.in/gjBFNSwJ)!
+
+Now the goal of this challenge is to better prepare for the job hunt. I'd also like to discuss some of the issues I ran into while working on this project. 
+
+## So what are we doing exacly?
+I will be creating a weather data collection system that fetches real-time weather information from the OpenWeather API and stores it in an AWS S3 bucket. 
+
+
+## Project Structure
+
+The project is organized as follows:
+- `weather-dashboard`: Parent directory contaiting all project code and documentation.
+- `src/`: Directory within `weather-dashboard` containing the source code for the weather data collection system.
+- `tests/`: Directory within `weather-dashboard`, placeholder for unit tests.
+- `data/`: Directory within `weather-dashboard`, used for storing collected weather data.
+- `requirements.txt`: File listing the Python dependencies required for the project.
+- `README.md`: File containing project documentation (this file). 
+- `.env`: File within `weather-dashboard` that stores environment variables such as API keys and AWS credentials.
+
+## Instructions
+
+1. **Create parent directoryy**: `mkdir weather-dashboard`
+2. **Create subdirectories**: `mkdir src tests data`
+3. **Create `__init__.py` and `src/weather_dashboard.py` files within the `src` subdirectory**: `touch src/__init__.py src/weather_dashboard.py`
+* Note that `__init__.py` will mark the src directory as a package and will help ensure compatibility if older Python versions are being used. On the other hand, the `weather_dashboard.py` file will contain the Python code that will do all of the fetching of weather data from the API. 
+4. **Create `requirements.txt README.md .env` files**: `touch requirements.txt README.md .env`
+
+The following steps will configure the .gitignore file to keep a clean and efficient version control system, that focuses on source code and essential files.
+5. **Add .env file to .gitignore**: `echo ".env" >> .gitignore`
+6. **Have git ignore files with `.zip` extension**: `echo "*.zip" >> .gitignore`
+
+7. **Add ependencies to our requirements.txt file**: 
+```
+echo "python-dotenv==1.0.0" >> requirements.txt
+   echo "boto3==1.26.137" >> requirements.txt
+   echo "requests==2.28.2" >> requirements.txt.
+
+8. **Configure AWS access**: Run `aws configure` and enter access keys.
+9. **Create file that stores api key**: `echo "OPENWEATHER_API_KEY=your_api_key" >> .env`
+10. **Create bucket stores api data**: `echo "AWA_BUCKET_NAME=weather-dashboard-${RANDOM}" >> .env`
+11. **Add code python script to `weather_dashboard.py` file**: This code can be found in this repo. 
+12. **Create a virtual environment to run python script**: 
+`python3 -m venv .venv`
+13. **Activate virtual env**: `source .venv/bin/activate`
+14. **Install boto3 to virtual env**: `pip install boto3`
+15. **Install all dependencies**: `pip install -r requirements.txt`
+16. **Run python script**: `python3 "src/weather_dashboard.py"`
+
+
+
+
+
+
+
 
 
