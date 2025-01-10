@@ -68,13 +68,21 @@ NOte that this API key is generated once you create an account with [OpenWeather
    ```
  
 13. **Activate virtual env**: `source .venv/bin/activate`
+* Before diving into installing your project's dependencies, it's a good idea to activate your virtual environment. This keeps your project's packages separate from the rest of your system, avoiding any mix-ups. I learned this after going around in circles...
 14. **Install boto3 to virtual env**: `pip install boto3`
 15. **Install all dependencies**: `pip install -r requirements.txt`
-16. **Run python script**: `python3 "src/weather_dashboard.py"`
+16. **Run python script**: `python3 "src/weather_dashboard.py"
+![Script Output](./script-output.png)
+`
+Now, lets make sure the bucket we created is storing weather information correctly. For this, navigate to the console and inspect the objects within the bucket. You should have 3 objects, one with weather information for each of the cities specified in our script. 
+![Script Output](./objects2.png)
 
-   
-   
-   
+
+Select an object and click Open. 
+![Script Output](./cities-json.png)
+
+
+
    
    
    
