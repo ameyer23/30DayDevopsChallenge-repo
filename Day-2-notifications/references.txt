@@ -1,0 +1,4 @@
+Below is a list of works cited.
+
+1. API bee diagram: https://rapidapi.com/blog/api-glossary/api/
+2. API in depth by Ifeanyi: https://www.youtube.com/watch?v=Wh8rmZhekrE&ab_channel=REXTECHfriends
