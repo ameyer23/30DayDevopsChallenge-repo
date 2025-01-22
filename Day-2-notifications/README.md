@@ -12,14 +12,14 @@ APIs act as intermediaries that help applications to communicate and exchange da
 
 
 ### 2. AWS Lambda
-Lambda is one of AWS' serverless compute solutions. It lets us run code without having to worry about managing a server, which can be costly. In addition, this solution makes scalability possible if demand for game data were to suddenly increase. In this scenario, Lambda will run the code that will query our API, return a JSON response that will need to be translated into a human readable format to be sent to our email or phone number.
+Lambda is one of AWS' serverless computing solutions. It lets us run code without having to worry about managing a server, which can be costly. In addition, this solution makes scalability possible if demand for game data were to suddenly increase. In this scenario, Lambda will run the code that will query our API, and return a JSON response that will need to be translated into a human-readable format to be sent to our email or phone number.
 
 
 ## 3. Amazon SNS (Simple Notification Service)
-SNS will recieve data from Lambda and push notifications to endpoints (subscribers), which are a phone number and email in this case.
+SNS will receive data from Lambda and push notifications to endpoints (subscribers), which are phone numbers and emails in this case.
 
 ## 4. Amazon EventBridge
-Now, we don't want to be bonmbarded by notifications ALL the time. instead, we will introduce some automation by using an EventBridge rule that will invoke our Lambda function to retrieve game data at specified intervals. This scheduling of a task is also known as a cron job. 
+Now, we don't want to be bombarded by notifications ALL the time. instead, we will introduce some automation by using an EventBridge rule that will invoke our Lambda function to retrieve game data at specified intervals. This scheduling of a task is also known as a cron job. 
 
 
 ## Conclusion
